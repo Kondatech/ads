@@ -1,0 +1,52 @@
+{% extends 'header_footeur.html' %}
+
+{% load static %}
+{% block contenu %}
+<body>
+    <div class="container mt-5">
+        <!-- Formulaire d'ajout de réalisation -->
+        <div class="card shadow-sm mb-5">
+            <div class="card-header">
+                <h3 class="mb-0">Ajouter une réalisation</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.as_p }}
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg w-100">Ajouter la réalisation</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Liste des réalisations existantes -->
+        <h3 class="mt-5 mb-3">Liste des réalisations existantes</h3>
+        <div class="row">
+            {% for realisation in realisations %}
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        {% if realisation.image %}
+                            <img src="{{ realisation.image.url }}" class="card-img-top" alt="{{ realisation.title }}">
+                        {% else %}
+                            <img src="{% static 'image/salon.jpg' %}" class="card-img-top" alt="Image par défaut">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ realisation.title }}</h5>
+                            <p class="card-text">{{ realisation.description }}</p>
+                            
+                            <!-- Formulaire de suppression -->
+                            <form method="POST" action="{% url 'delete_realisation' realisation.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="text-center w-100">Aucune réalisation enregistrée pour le moment.</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends 'header_footeur.html' %}
+{% load static %}
+{% block contenu %}
+<head>
+<style>
+    /* Style personnalisé */
+    .hero-banner {
+        background: url("{% static 'image/5.jpg' %}") no-repeat center center;
+        background-size: cover;
+        color: rgb(255, 98, 0);
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .hero-banner h1 {
+        font-size: 3rem;
+        font-weight: 800;
+    }
+    .hero-banner p {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+    .btn-custom {
+        background-color: #007bff;
+        color: white;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+    .btn-custom:hover {
+        background-color: #fc7b03;
+    }
+    .services .card {
+        transition: transform 0.3s ease;
+    }
+    .services .card:hover {
+        transform: translateY(-10px);
+    }
+</style>
+</head>
+<body>
+
+<!-- Bannière principale -->
+<section class="hero-banner">
+<div class="container text-white">
+    <h1>Bienvenue chez AHMED-DESIGN</h1>
+    <p>Experts en design, impression, peinture et décoration pour transformer vos idées en réalité.</p>
+    <div class="mt-4">
+        <a href="/service/" class="btn btn-custom">Voir nos services</a>
+        <a href="/demande-devis/" class="btn btn-outline-light">Demander un devis</a>
+    </div>
+</div>
+</section>
+
+<!-- Présentation de l'entreprise -->
+<section class="py-5">
+<div class="container text-center">
+    <h2 class="mb-4">Qui sommes-nous ?</h2>
+    <p>
+        Nous sommes une équipe passionnée offrant des services de qualité en design graphique, impression, peinture et décoration intérieure. 
+        Que ce soit pour vos projets personnels ou professionnels, nous apportons créativité et expertise.
+    </p>
+</div>
+</section>
+
+<!-- Services -->
+<section id="services" class="services py-5 bg-light">
+<div class="container text-center">
+    <h2 class="mb-5">Nos Services</h2>
+    <div class="row g-4">
+        <div class="col-md-3">
+            <div class="card h-100 shadow-sm">
+                <img src="{% static 'image/info.jpeg' %}" class="card-img-top" alt="Design">
+                <div class="card-body">
+                    <h5 class="card-title">Design</h5>
+                    <p class="card-text">Création de designs modernes et personnalisés pour vos besoins.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100 shadow-sm">
+                <img src="{% static 'image/info.jpeg' %}" class="card-img-top" alt="Impression">
+                <div class="card-body">
+                    <h5 class="card-title">Impression</h5>
+                    <p class="card-text">Impressions de haute qualité pour tous vos projets.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100 shadow-sm">
+                <img src="{% static 'image/peintre.jpeg' %}" class="card-img-top" alt="Peinture">
+                <div class="card-body">
+                    <h5 class="card-title">Peinture</h5>
+                    <p class="card-text">Services de peinture professionnelle pour vos espaces.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100 shadow-sm">
+                <img src="{% static 'image/peintre.jpeg' %}" class="card-img-top" alt="Décoration">
+                <div class="card-body">
+                    <h5 class="card-title">Décoration</h5>
+                    <p class="card-text">Décoration intérieure élégante et sur mesure.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-5">
+<div class="container text-center">
+    <h2 class="mb-4">Contactez-nous</h2>
+    <p>Pour toute demande, n'hésitez pas à nous contacter via notre formulaire ou appelez-nous directement.</p>
+    <a href="contact/" class="btn btn-custom">Formulaire de Contact</a>
+</div>
+</section>
+</body>
+{% endblock %}

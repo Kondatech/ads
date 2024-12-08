@@ -1,0 +1,74 @@
+{% extends 'header_footeur.html' %}
+
+{% block contenu %}
+
+{% load static %}
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Nos Services</h1>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <!-- Service 1 -->
+            <div class="col">
+                <div class="card h-100 shadow-lg rounded animate__animated animate__fadeInUp">
+                    <img src="{% static 'image/info.jpeg' %}" class="card-img-top" alt="Infographie">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Infographie</h5>
+                        <p class="card-text text-center">Donne de l'idée et nous la réaliserons.</p>
+                        <div class="text-center">
+                            <i class="fa fa-paint-brush fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="col">
+                <div class="card h-100 shadow-lg rounded animate__animated animate__fadeInUp animate__delay-1s">
+                    <img src="{% static 'image/info.jpeg' %}" class="card-img-top" alt="Impression">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Impression</h5>
+                        <p class="card-text text-center">Impression de qualité pour tous vos documents.</p>
+                        <div class="text-center">
+                            <i class="fa fa-print fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="col">
+                <div class="card h-100 shadow-lg rounded animate__animated animate__fadeInUp animate__delay-2s">
+                    <img src="{% static 'image/info.jpeg' %}" class="card-img-top" alt="Peinture">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Peinture</h5>
+                        <p class="card-text text-center">Peinture de haute qualité pour vos projets.</p>
+                        <div class="text-center">
+                            <i class="fa fa-paint-roller fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="col">
+                <div class="card h-100 shadow-lg rounded animate__animated animate__fadeInUp animate__delay-3s">
+                    <img src="{% static 'image/info.jpeg' %}" class="card-img-top" alt="Décoration">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Décoration</h5>
+                        <p class="card-text text-center">Décoration moderne et élégante pour tous vos espaces.</p>
+                        <div class="text-center">
+                            <i class="fa fa-couch fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lien vers le script Bootstrap et animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+{% endblock %}

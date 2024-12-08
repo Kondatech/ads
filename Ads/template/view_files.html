@@ -1,0 +1,41 @@
+{% extends 'header_footeur.html' %}
+{% block contenu %}
+<div class="container mt-5">
+    <h2 class="mb-4">Fichiers envoyés</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Dimensions</th>
+                <th>Type de papier</th>
+                <th>Nombre d'examplaire</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for file in files %}
+            <tr>
+                <td>{{ file.name }}</td>
+                <td>{{ file.dimensions }}</td>
+                <td>{{ file.paper_type }}</td>
+                <td>{{ file.print_type }}</td>
+                <td>{{ file.created_at|date:"d/m/Y H:i" }}</td>
+                <td>
+                    <a href="{{ file.file.url }}" class="btn btn-primary btn-sm" download>Télécharger</a>
+                    <form method="POST" action="{% url 'delete_file' file.pk %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+                    </form>
+                    
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" class="text-center">Aucun fichier envoyé pour le moment.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

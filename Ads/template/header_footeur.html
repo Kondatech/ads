@@ -1,0 +1,112 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Lien CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Lien pour les icônes FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Inclusion du fichier CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>AHMED-DESIGN</title>
+</head>
+<body>
+
+    <div class="promo">
+        <span>Bienvenue sur notre site</span> 
+      </div>
+      <header class="header">
+          <nav class="nav containe">
+              <div class="navigation d-flex">
+                  <div class="icon1">
+                      <i class='bx bx-menu'></i>        
+                  </div>          
+                  <div class="logo">
+                      <a href="#"><img src="{% static 'image/1696178619032.jpg' %}"></a>
+                  </div>
+                  <div class="menu">
+                      <div class="top">
+                          <span class="fermer">fermer <i class='bx bx-x'></i></span>
+                      </div>
+                      <ul class="nav_list d-flex">
+                          <li class="nav-item">
+                              <a href="/" class="nav-link"><span class="ecm">Acceuil</span></a>
+                          </li>
+                          <li class="nav-item">
+                              <a href="/service/" class="nav-link"><span class="ecm">service</span></a>
+                          </li>
+                          <li class="nav-item">
+                              <a href="/galerie/" class="nav-link"><span class="ecm">nos realisation</span></a>
+                          </li>
+                          <li class="nav-item">  
+                              <a href="/upload/" class="nav-link"><span class="ecm">impression</span> </a>
+                          </li>
+                          <li class="nav-item">  
+                            <a href="/demande-devis/" class="nav-link"><span class="ecm">Demande de devis</span> </a>
+                        </li>
+                        <li class="nav-item">  
+                            <a href="/contact/" class="nav-link"><span class="ecm">contact</span> </a>
+                        </li>
+                      </ul>
+                  </div>
+                  <div class="icons d-flex">
+                      <div><i class='1'></i></div>
+                      <div><i class='1'></i></div>
+                      <div><i class='1'></i></div>
+                      <div>
+                          <i class='1'></i>
+                          <span class="align-center">AHMED DESIGN</span>
+                      </div>
+                      
+                  </div>
+              </div>
+          </nav>
+        </header>
+    {% block contenu %} {% endblock %}
+
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Section À propos -->
+                <div class="col-md-4">
+                    <h5 class="text-uppercase mb-4">À propos</h5>
+                    <p>
+                        Bienvenue sur notre site. Nous offrons les meilleures solutions pour vos besoins. Contactez-nous pour plus d'informations.
+                    </p>
+                </div>
+                <!-- Section Liens rapides -->
+                <div class="col-md-4">
+                    <h5 class="text-uppercase mb-4">Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/" class="text-light">Accueil</a></li>
+                        <li><a href="/service/" class="text-light">Services</a></li>
+                        <li><a href="/contact/" class="text-light">Contact</a></li>
+                        <li><a href="/galerie/" class="text-light">Nos réalisation</a></li>
+                    </ul>
+                </div>
+                <!-- Section Réseaux sociaux -->
+                <div class="col-md-4 text-center">
+                    <h5 class="text-uppercase mb-4">Suivez-nous</h5>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="mb-0">© 2024 Tous droits réservés. Créé avec ❤️ par KONDA IBRAHIMA.</p>
+            </div>
+        </div>
+    </footer>
+    
+
+    
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
